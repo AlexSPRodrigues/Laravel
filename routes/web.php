@@ -15,8 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/formularioProduto", "ProdutoController@mostraFormulario");
+Route::get("formularioProduto", "ProdutoController@mostraFormulario");
 
-Route::get("/listaProduto", "ProdutoController@mostraProdutos");
+Route::get("listaProduto", "ProdutoController@mostraProdutos");
 
-Route::post("/cadastrarProduto", "ProdutoController@cadastrarProduto");
+Route::get("formularioAlterarProduto/{id}", "ProdutoController@formularioAlterar");
+
+Route::post("atualizarProduto/{id}", "ProdutoController@atualizarProduto");
+
+
+Route::get("excluirProduto/{id}", "ProdutoController@excluirProduto");
+
+
+Route::post("cadastrarProduto", "ProdutoController@cadastrarProduto");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

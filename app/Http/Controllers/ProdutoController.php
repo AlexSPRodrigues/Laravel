@@ -28,4 +28,21 @@ class ProdutoController extends Controller{
    		return view("produto/listaProduto", ['produtos'=>$produtos]);
    }
 
+   public function formularioAlterar($id){
+      $produto = Produto::find($id);
+      return view('produto/formularioAlterar', ['produto'=>$produto]);
+   }
+
+   public function atualizarProduto($id){
+      $dadosProduto = Request::except('_token', 'btAtualizarProduto');
+      $produto = Produto::where('id', '=', $id)->update($dadosProduto);
+      return redirect("listaProduto");
+   }
+
+   public function excluirProduto($id){
+      $produto = Produto::find($id);
+      $produto->delete();
+      return redirect('listaProduto');
+   }
+
 }

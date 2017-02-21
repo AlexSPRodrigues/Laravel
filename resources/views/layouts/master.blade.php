@@ -12,13 +12,13 @@
 					<a class="navbar-brand" href="#">Lavarel - CRUD</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="{{ url('home') }}">Home</a></li>
 					<li><a href="{{ url('formularioProduto') }}">Cadastro de Produtos</a></li>
 					<li><a href="{{ url('listaProduto') }}">Lista de Produtos</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span>Cadastrar Usuário</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="{{url('register')}}"><span class="glyphicon glyphicon-user"></span>Cadastrar Usuário</a></li>
+					<li><a href="{{url('home')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 			</div>
 		</nav>
